@@ -1,16 +1,16 @@
-import { ChakraProvider } from "@chakra-ui/react";
-import type { EmotionCache } from "@emotion/cache";
-import { CacheProvider } from "@emotion/react";
-import type { AppProps } from "next/app";
-import Head from "next/head";
-import Script from "next/script";
-import { DefaultSeo } from "next-seo";
+import { ChakraProvider } from '@chakra-ui/react';
+import type { EmotionCache } from '@emotion/cache';
+import { CacheProvider } from '@emotion/react';
+import type { AppProps } from 'next/app';
+import Head from 'next/head';
+import Script from 'next/script';
+import { DefaultSeo } from 'next-seo';
 
-import defaultSEOConfig from "../../next-seo.config";
-import Layout from "../components/layout";
-import createEmotionCache from "styles/createEmotionCache";
-import customTheme from "styles/customTheme";
-import "styles/globals.css";
+import defaultSEOConfig from '../../next-seo.config';
+import Layout from '../components/layout';
+import createEmotionCache from 'styles/createEmotionCache';
+import customTheme from 'styles/customTheme';
+import 'styles/globals.css';
 
 const clientSideEmotionCache = createEmotionCache();
 
