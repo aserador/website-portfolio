@@ -3,8 +3,8 @@ import { mode } from '@chakra-ui/theme-tools';
 
 import { colors } from './colors';
 import { components } from './components';
-import { fonts } from './fonts';
 import { config } from './config';
+import { fonts } from './fonts';
 
 const customTheme = extendTheme({
   fonts,
@@ -12,7 +12,7 @@ const customTheme = extendTheme({
   config,
   components,
   styles: {
-    global: (props: any) => ({
+    global: (props: Record<string, unknown>) => ({
       '*::selection': {
         color: mode('#fff', 'rgb(17, 17, 17)')(props),
         background: mode(

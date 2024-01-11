@@ -4,4 +4,4 @@ Built using Next.js/TypeScript + React.js w/ Chakra UI v2. Deployed using Netlif
 
 # References
 
-* https://github.com/sozonome/nextarter-chakra
+- https://github.com/sozonome/nextarter-chakra
