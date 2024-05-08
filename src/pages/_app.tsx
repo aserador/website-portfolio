@@ -28,9 +28,10 @@ const MyApp = ({
       <ChakraProvider theme={customTheme}>
         <Head>
           <meta
-            name="viewpo`rt"
+            name="viewport"
             content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover"
           />
+          <script src="https://cdn.counter.dev/script.js" data-id="806deabe-f1bf-4656-94c6-8ee513cc3c50" data-utcoffset="-5"></script>
         </Head>
         <DefaultSeo {...defaultSEOConfig} />
         <Script
@@ -44,9 +45,6 @@ const MyApp = ({
           gtag('js', new Date());
           gtag('config', 'G-WQ6SL054X0');
         `}
-        </Script>
-        <Script strategy="afterInteractive" id="other-analyitcs">
-          {`if(!sessionStorage.getItem("_swa")&&document.referrer.indexOf(location.protocol+"//"+location.host)!== 0){fetch("https://counter.dev/track?"+new URLSearchParams({referrer:document.referrer,screen:screen.width+"x"+screen.height,user:"daggy1234",utcoffset:"6"}))};sessionStorage.setItem("_swa","1");`}
         </Script>
         <Layout>
           <Component {...pageProps} />
