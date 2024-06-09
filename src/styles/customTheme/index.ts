@@ -5,6 +5,21 @@ import { colors } from './colors';
 import { components } from './components';
 import { config } from './config';
 import { fonts } from './fonts';
+import { createColorVariables } from './colors';
+
+function flattenColors(colors: Record<string, any>): Record<string, string> {
+  return Object.entries(colors).reduce((acc, [colorName, colorValue]) => {
+    if (typeof colorValue === 'string') {
+      return { ...acc, [colorName]: colorValue };
+    } else if (typeof colorValue === 'object') {
+      const flattened = flattenColors(colorValue);
+      return { ...acc, ...Object.entries(flattened).reduce((acc2, [nestedColorName, nestedColorValue]) => {
+        return { ...acc2, [`${colorName}-${nestedColorName}`]: nestedColorValue };
+      }, {}) };
+    }
+    return acc;
+  }, {});
+}
 
 const customTheme = extendTheme({
   fonts,
@@ -13,6 +28,9 @@ const customTheme = extendTheme({
   components,
   styles: {
     global: (props: Record<string, unknown>) => ({
+      ':root': {
+        ...createColorVariables(flattenColors(colors)),
+      },
       '*::selection': {
         color: mode('#fff', 'rgb(17, 17, 17)')(props),
         background: mode(

@@ -7,11 +7,39 @@ import {
   Text,
   VStack,
 } from '@chakra-ui/react';
+import { TypewriterEffect } from '~/components/home/cooleffect';
 
 const Home = () => {
+  const words = [
+    { 
+      text: "I'm",
+      className: "text-brand-100",
+    },
+    {
+      text: "Audric.",
+      className: "text-brand-100",
+    },
+    {
+      text: "I",
+      className: "text-brand-100",
+    },
+    {
+      text: "love",
+      className: "text-brand-100",
+    },
+    {
+      text: "building",
+      className: "text-brand-100",
+    },
+    {
+      text: "solutions.",
+      className: "text-teal-200",
+    },
+  ];
+  
   return (
     <VStack
-      spacing={8}
+      spacing={9}
       alignItems="center"
       justifyContent="center"
       minHeight="100vh"
@@ -30,9 +58,7 @@ const Home = () => {
           src="/audric.jpg"
           mb={4}
         />
-        <Heading as="h1" size="2xl" mb={4}>
-          Audric Serador
-        </Heading>
+        <TypewriterEffect words={words} />
         <Text fontSize="xl">
           Computer Science student at the University of Illinois at
           Urbana-Champaign with a background in software engineering, full stack
